@@ -19,11 +19,11 @@ public class Enterprise {
     @Unique
     private String nombreEmpresa;
     private String direccion;
-    private String telefono;
-    private String NIT;
+    private Integer telefono;
+    private Integer NIT;
     @Unique
     private String nombreEmpleado;
     @Unique
-    private String documentoEmpleado;
+    private Integer documentoEmpleado;
     private Transaction[] transaccion;
 }

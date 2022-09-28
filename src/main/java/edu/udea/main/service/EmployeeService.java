@@ -13,18 +13,13 @@ public class EmployeeService {
 
     public void lookEmployee(Employee employee){
         employeeRepository.findAll();
-
     }
     public void makeEmployee(Employee employee){
         employeeRepository.save(employee);
-
     }
     public void deleteEmployee(Employee employee){
         employeeRepository.delete(employee);
-
     }
-    public void updateEmployee(){
 
-    }
 
 }

@@ -21,8 +21,5 @@ public class EnterpriseService {
     public void deleteEnterprise(Enterprise enterprise){
         enterpriseRepository.delete(enterprise);
     }
-    public void updateEnterprise(Enterprise enterprise){
 
-
-    }
 }

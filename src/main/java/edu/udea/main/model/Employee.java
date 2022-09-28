@@ -19,7 +19,7 @@ public class Employee {
     @Unique
     private String nombreEmpleado;
     @Unique
-    private String documentoEmpleado;
+    private Integer documentoEmpleado;
     @Unique
     private String emailEmpleado;
     private String empresaEmpleado;
