@@ -1,10 +1,11 @@
 package edu.udea.main.model;
 
+import edu.udea.main.enums.Enum_RoleName;
 import lombok.*;
 import org.checkerframework.common.aliasing.qual.Unique;
 
 import javax.persistence.*;
-
+import java.util.Date;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,18 +13,26 @@ import javax.persistence.*;
 @Setter
 @ToString
 public class Employee {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
-    private Long id;
-    @Unique
-    private String nombreEmpleado;
-    @Unique
-    private Integer documentoEmpleado;
-    @Unique
-    private String emailEmpleado;
-    private String empresaEmpleado;
-    private String rolEmpleado;
-    private Integer transaccion;
-}
+   @Id
+   @GeneratedValue(strategy = GenerationType.AUTO)
+   @Column(name = "id", nullable = false)
+   private Long id;
 
+   @Unique
+   private String email;
+   private Enum_RoleName role;
+   @ManyToOne
+   @JoinColumn(name = "enterprise_ID")
+   private Enterprise enterprise;;
+   private Transaction[] transactions;
+   private Date updatedAt;
+   private Date createdAt;
+
+   public Enterprise getEnterprise() {
+      return enterprise;
+   }
+
+   public void setEnterprise(Enterprise enterprise) {
+      this.enterprise = enterprise;
+   }
+}

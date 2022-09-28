@@ -4,7 +4,7 @@ import lombok.*;
 import org.checkerframework.common.aliasing.qual.Unique;
 
 import javax.persistence.*;
-
+import java.util.Date;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,14 +16,15 @@ public class Enterprise {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
+
     @Unique
-    private String nombreEmpresa;
-    private String direccion;
-    private Integer telefono;
-    private Integer NIT;
+    private String name;
     @Unique
-    private String nombreEmpleado;
-    @Unique
-    private Integer documentoEmpleado;
-    private Integer transaccion;
+    private String document;
+    private String phone;
+    private String address;
+    private Transaction[] transactions;
+    private Date createdAt;
+    private Date updatedAt;
+
 }
