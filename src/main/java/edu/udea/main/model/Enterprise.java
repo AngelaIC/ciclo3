@@ -25,5 +25,5 @@ public class Enterprise {
     private String nombreEmpleado;
     @Unique
     private Integer documentoEmpleado;
-    private Transaction[] transaccion;
+    private Integer transaccion;
 }

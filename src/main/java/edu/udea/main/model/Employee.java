@@ -24,6 +24,6 @@ public class Employee {
     private String emailEmpleado;
     private String empresaEmpleado;
     private String rolEmpleado;
-    private Transaction[] transaccion;
+    private Integer transaccion;
 }
 
