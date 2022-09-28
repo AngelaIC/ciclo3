@@ -1,15 +1,40 @@
 package edu.udea.main.model;
 
+import lombok.ToString;
+import org.checkerframework.common.aliasing.qual.Unique;
+
+import javax.persistence.*;
+
+@Entity
+@ToString
 public class Transaction {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
+    private Long id;
+
     private String concepto;
     private float monto;
-    private Enterprise empresa;
-    private Employee rolCreador;
-    private Employee nombreEmpleadoCreador;
-    private Employee rolUpdate;
-    private Employee getNombreEmpleadoUpdate;
+    private String empresa;
+    private String rolCreador;
+    @Unique
+    private String nombreEmpleadoCreador;
+    private String rolUpdate;
+    @Unique
+    private String getNombreEmpleadoUpdate;
 
-    public Transaction(String concepto, float monto, Enterprise empresa, Employee rolCreador, Employee nombreEmpleadoCreador, Employee rolUpdate, Employee getNombreEmpleadoUpdate) {
+    public Transaction() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Transaction(String concepto, float monto, String empresa, String rolCreador, String nombreEmpleadoCreador, String rolUpdate, String getNombreEmpleadoUpdate) {
         this.concepto = concepto;
         this.monto = monto;
         this.empresa = empresa;
@@ -35,43 +60,43 @@ public class Transaction {
         this.monto = monto;
     }
 
-    public Enterprise getEmpresa() {
+    public String getEmpresa() {
         return empresa;
     }
 
-    public void setEmpresa(Enterprise empresa) {
+    public void setEmpresa(String empresa) {
         this.empresa = empresa;
     }
 
-    public Employee getRolCreador() {
+    public String getRolCreador() {
         return rolCreador;
     }
 
-    public void setRolCreador(Employee rolCreador) {
+    public void setRolCreador(String rolCreador) {
         this.rolCreador = rolCreador;
     }
 
-    public Employee getNombreEmpleadoCreador() {
+    public String getNombreEmpleadoCreador() {
         return nombreEmpleadoCreador;
     }
 
-    public void setNombreEmpleadoCreador(Employee nombreEmpleadoCreador) {
+    public void setNombreEmpleadoCreador(String nombreEmpleadoCreador) {
         this.nombreEmpleadoCreador = nombreEmpleadoCreador;
     }
 
-    public Employee getRolUpdate() {
+    public String getRolUpdate() {
         return rolUpdate;
     }
 
-    public void setRolUpdate(Employee rolUpdate) {
+    public void setRolUpdate(String rolUpdate) {
         this.rolUpdate = rolUpdate;
     }
 
-    public Employee getGetNombreEmpleadoUpdate() {
+    public String getGetNombreEmpleadoUpdate() {
         return getNombreEmpleadoUpdate;
     }
 
-    public void setGetNombreEmpleadoUpdate(Employee getNombreEmpleadoUpdate) {
+    public void setGetNombreEmpleadoUpdate(String getNombreEmpleadoUpdate) {
         this.getNombreEmpleadoUpdate = getNombreEmpleadoUpdate;
     }
 }
