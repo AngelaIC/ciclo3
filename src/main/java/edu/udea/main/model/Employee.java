@@ -27,6 +27,7 @@ public class Employee {
    @JoinColumn(name = "enterprise_ID")
    private Enterprise enterprise;
    @ManyToOne
+   @JoinColumn(name = "transaction_ID")
    private Transaction[] transactions;
    private Date updatedAt;
    private Date createdAt;

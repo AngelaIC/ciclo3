@@ -3,6 +3,7 @@ package edu.udea.main.model;
 import lombok.*;
 import org.checkerframework.common.aliasing.qual.Unique;
 
+import javax.naming.Name;
 import javax.persistence.*;
 import java.util.Date;
 @Entity
@@ -24,6 +25,7 @@ public class Enterprise {
     private String phone;
     private String address;
     @ManyToOne
+    @JoinColumn
     private Transaction[] transactions;
     private Date createdAt;
     private Date updatedAt;
