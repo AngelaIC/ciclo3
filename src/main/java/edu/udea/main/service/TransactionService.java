@@ -22,7 +22,7 @@ public class TransactionService {
         transactionRepository.save(transaction);
 
     }
-    public void deleteTransaction(){
-
+    public void deleteTransaction(Long id){
+        transactionRepository.deleteById(id);
     }
 }

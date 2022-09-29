@@ -22,8 +22,8 @@ public class EnterpriseService {
     public void makeEnterprise(Enterprise enterprise){
         enterpriseRepository.save(enterprise);
     }
-    public void deleteEnterprise(){
-
+    public void deleteEnterprise(Long id){
+        enterpriseRepository.deleteById(id);
     }
 
 }
