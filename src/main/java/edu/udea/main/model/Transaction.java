@@ -15,9 +15,10 @@ public class Transaction {
    @Id
    @GeneratedValue(strategy = GenerationType.AUTO)
    @Column(name = "id", nullable = false)
-   private Long id;
-
-   private Enum_Concept concept;
+    private Long id;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "concept")
+    private Enum_Concept concept;
     private float amount;
     @ManyToOne
     @JoinColumn(name = "enterprise_ID")

@@ -20,10 +20,13 @@ public class Employee {
 
    @Unique
    private String email;
+   @Enumerated(EnumType.STRING)
+   @Column( name = "role")
    private Enum_RoleName role;
    @ManyToOne
    @JoinColumn(name = "enterprise_ID")
-   private Enterprise enterprise;;
+   private Enterprise enterprise;
+   @ManyToOne
    private Transaction[] transactions;
    private Date updatedAt;
    private Date createdAt;
