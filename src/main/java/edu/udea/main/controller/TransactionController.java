@@ -13,8 +13,9 @@ public class TransactionController {
     @Autowired
     TransactionService transactionService;
     @GetMapping("/transaction")
-    private List<Transaction> lookTransaction(){
-        return transactionService.lookTransaction();
+    private String lookTransaction(){
+        transactionService.lookTransaction();
+        return "transaction";
     }
     @PostMapping("/transaction")
     private void makeTransaction(@RequestBody Transaction transaction){

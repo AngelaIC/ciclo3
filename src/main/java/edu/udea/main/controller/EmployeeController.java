@@ -14,8 +14,9 @@ public class EmployeeController {
     @Autowired
     EmployeeService employeeService;
     @GetMapping("/employee")
-    private List<Employee> lookEmployee(){
-        return employeeService.lookEmployee();
+    private String lookEmployee(){
+        employeeService.lookEmployee();
+        return "service";
     }
     @PostMapping("/employee")
     private void makeEmployee(@RequestBody Employee employee){

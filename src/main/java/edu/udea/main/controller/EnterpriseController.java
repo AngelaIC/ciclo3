@@ -14,8 +14,9 @@ public class EnterpriseController {
     EnterpriseService enterpriseService;
 
     @GetMapping("/enterprise")
-    private List<Enterprise> lookEnterprise(){
-        return enterpriseService.lookEnterprise();
+    private String lookEnterprise(){
+        enterpriseService.lookEnterprise();
+        return "enterprise";
     }
     @PostMapping("/enterprise")
     private void makeEnterprise(@RequestBody Enterprise enterprise){

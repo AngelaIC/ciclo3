@@ -1,47 +1,44 @@
 package edu.udea.main.model;
 
-import org.checkerframework.common.aliasing.qual.Unique;
+import lombok.ToString;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 
 @Entity
-
+@ToString
 public class Enterprise {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Unique
+    @Column(name = "nombre", nullable = false, unique = true, length = 45)
     private String name;
-    @Unique
+    @Column(name = "document", nullable = false, unique = true, length = 45)
     private String document;
-    @Column
+    @Column(name = "phone", nullable = false)
     private String phone;
-    @Column
+    @Column(name = "address", nullable = false, length = 190)
     private String address;
     @OneToOne
     @JoinColumn(name = "transactions_id")
     private Transaction[] transactions;
-    @Column
-    private Date createdAt;
-    @Column
-    private Date updatedAt;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @CreationTimestamp
+    @Column(name = "createdAt")
+    private LocalDateTime createdAt;
+    @UpdateTimestamp
+    @Column(name = "updatedAt")
+    private LocalDateTime updatedAt;
 
     public Enterprise() {
     }
 
-    public Enterprise(@Unique String name, @Unique String document, String phone, String address, Transaction[] transactions, Date createdAt, Date updatedAt) {
+    public Enterprise(Long id, String name, String document, String phone, String address, Transaction[] transactions, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.id = id;
         this.name = name;
         this.document = document;
         this.phone = phone;
@@ -49,6 +46,14 @@ public class Enterprise {
         this.transactions = transactions;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -91,19 +96,19 @@ public class Enterprise {
         this.transactions = transactions;
     }
 
-    public Date getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Date getUpdatedAt() {
+    public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
+    public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 }
