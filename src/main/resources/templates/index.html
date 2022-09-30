@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ciclo3</title>
+</head>
+<body>
+    <!-- Html (Estructura del título y el logo)-->
+    <section>
+        <div id="titulo"><h1><b> Innovation Developers </b></h1></div>
+        <img src="https://www.faborit.com/wp-content/uploads/2020/07/blog-cacao-chocolate-planta.jpg">
+    </section>
+
+    <!-- Html (Botones)-->
+    <div id="clic" >
+        <button onclick="transactions"> Ingresos y Egresos </button>
+        <button onclick="employees"> Usuarios </button>
+        <button onclick="enterprises"> Empresas </button>
+
+        <button onclick="enterTransaction"> Ingresar a Transacciones </button>
+        <button onclick="enterEmployees"> Ingreso a Usuarios </button>
+        <button onclick="enterEnterprises"> Ingreso a Empresas </button>
+
+        <button onclick="newTransaction"> Nueva Transacción </button>
+        <button onclick="newEmployee"> Nuevo Usuario </button>
+        <button onclick="newEnterprise"> Nueva Empresa </button>
+    </div>
+
+    <!-- Html (Transaction)-->
+    <section>
+        <div id="Transaction"><h2><b>Nuevo Movimiento de Dinero</b></h2></div>
+        <div>
+            <label for="amount"> Monto </label><br>
+            <input name="Monto" id="amount" >
+
+            <label for="concept"> Concepto </label>
+            <select name="concept" id="concept">
+                <option value="Enum_Concept"> Ingresos </option>
+                <option value="Enum_Concept"> Egresos </option>
+            </select>
+
+            <label for="createdAt"> Fecha de creación </label><br>
+            <input type="Date" name="Fecha" id="createdAt" >
+
+            <label for="updatedAt"> Fecha de subido </label><br>
+            <input type="Date" name="Fecha" id="updatedAt" >
+    </section>
+
+    <!-- Html (Transaction)-->
+</body>
+</html>
