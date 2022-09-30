@@ -6,44 +6,30 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../static/css/style.css">
+
     <title>ciclo3</title>
 </head>
 <body>
     <!-- Html (Estructura del título y el logo)-->
-    <section>
-        <div id="titulo" align="left"><h1><b> Innovation Developers </b></h1></div>
-        <div id="imagen">
-            <img src="https://www.faborit.com/wp-content/uploads/2020/07/blog-cacao-chocolate-planta.jpg">
+    <section class="ti">
+        <div id="titulo" ><h1><b> Innovation Developers </b></h1></div>
+        <div> <img src="https://elcomercio.pe/resizer/LVxIhRU2aZ2htjhQuSR8SVx72jM=/980x0/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/6BNTDLVEWNEN3A7CHKMJL36JVQ.jpg">
         </div>
+
     </section>
-
     <!-- Html (Subtítulo)-->
-    <div align="center">
-        <h1><b> Sistema de gestión de Ingesos y Gastos </b></h1>
-    </div>
-
-    <!-- Html (Botones)-->
     <div>
-        <button onclick="transactions"> Ingresos y Egresos </button>
-        <button onclick="employees"> Usuarios </button>
-        <button onclick="enterprises"> Empresas </button>
-    </div>
-
-    <!-- Html (Cajas)-->
-    <div align="right">
-        <section>
-            <label> Sistema de gestión de ingresos y gastos </label>
-            <label> Sistema de gestión de usuarios </label>
-            <label> Sistema de gestión de empresas </label>
-        </section>
+        <h1><b> Sistema de gestión de Ingesos y Gastos </b></h1>
     </div>
 
     <!-- Html (Transaction)-->
     <section>
-        <div id="Transaction" align=""center><h2><b> Nuevo Movimiento de Dinero </b></h2></div>
+        <form class="trans">
+            <label> Sistema de gestión de ingresos y gastos </label>
+        <div id="Transaction" align="center"><h2><b> Nuevo Movimiento de Dinero </b></h2></div>
         <div>
             <label for="amount"> Monto </label><br>
-            <input name="Monto" id="amount" >
+            <input type="number" name="Monto" id="amount" >
 
             <label for="concept"> Concepto </label>
             <select name="concept" id="concept">
@@ -52,22 +38,26 @@
             </select>
 
             <label for="createdAt"> Fecha de creación </label><br>
-            <input type="Date" name="Fecha" id="createdAt" >
+            <input type="date" name="Fecha" id="createdAt" >
 
             <label for="updatedAt"> Fecha de subido </label><br>
-            <input type="Date" name="Fecha" id="updatedAt" >
+            <input type="date" name="Fecha" id="updatedAt" >
         </div>
         <div>
+            <button onclick="transactions"> Ingresos y Egresos </button>
             <button onclick="newTransaction"> Nueva Transacción </button>
         </div>
+        </form>
     </section>
 
     <!-- Html (Employee)-->
     <section>
+        <form>
+            <label> Sistema de gestión de usuarios </label>
         <div id="Employee" align="center"><h2><b>Nuevo Usuario</b></h2></div>
         <div>
             <label for="email"> Email </label><br>
-            <input name="Email" id="email" >
+            <input type="email" name="Email" id="email" >
 
             <label for="role"> Rol </label>
             <select name="Rol" id="role">
@@ -76,29 +66,35 @@
             </select>
         </div>
         <div>
+            <button onclick="employees"> Usuarios </button>
             <button onclick="newEmployee"> Nuevo Usuario </button>
         </div>
+        </form>
     </section>
 
     <!-- Html (Enterprise)-->
     <section>
+        <form class="enterp">
+            <label> Sistema de gestión de empresas </label>
         <div id="Enterprise" align="center"><h2><b> Nueva Empresa </b></h2></div>
         <div>
             <label for="name"> Nombre </label><br>
-            <input name="Nombre" id="name" >
+            <input type="text" name="Nombre" id="name" >
 
             <label for="document"> Documento </label><br>
             <input name="Documento" id="document" >
 
             <label for="phone"> Teléfono </label><br>
-            <input name="Telefono" id="phone" >
+            <input type="number" name="Telefono" id="phone" >
 
             <label for="addres"> Dirección </label><br>
             <input name="Direccion" id="addres" >
         </div>
         <div>
-            <button onclick="newEnterprise"> Nueva Empresa </button>
+            <button onclick="enterprises"> Empresas </button>
+            <button id="prise" onclick="newEnterprise"> Nueva Empresa </button>
         </div>
+        </form>
     </section>
 
 </body>
